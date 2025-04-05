@@ -116,36 +116,31 @@ while True:
         print('answ: ', ras)
 
 #radicalul
-    else: #daca user nu va scrie nimic sau va scrie altceva, se va pune operatie de radical
-        def radicalul(x, y): #ca o exceptie sau daca user s-a incurcat cu simboluri.
+    elif c == 'sqrt': #daca user nu va scrie nimic sau va scrie altceva, se va pune operatie de radical
+        def radicalul(a, b): #ca o exceptie sau daca user s-a incurcat cu simboluri.
             print(a, b)
-            aleg = input('choose a number for sqrt: ')
-            
-            if aleg == x:
-                def rad(x):
-                    time.sleep(0.4)
-                    time.sleep(1)
-                    for i in range(3):
-                        time.sleep(1)
-                        print('\r','loading.' + '.' * i, end='')
-                        time.sleep(1)
-                        
-                    print('answ:', x ** 0.5)
-                rad(a, b)
-            
-            else:
-                def rad_b(y):
-                    time.sleep(0.4)
-                    time.sleep(1)
-                    for i in range(3):
-                        time.sleep(1)
-                        print('\r','loading.' + '.' * i, end='')
-                        time.sleep(1)
-                        
-                    print('answ:', y ** 0.5)
-                rad_b(b)
-        radicalul(a, b)
+            while True:
+                aleg = input('choose a number for sqrt: ')
+                try:
+                    aleg = int(aleg)
+                    aleg = abs(aleg)
+                    break
+                except:
+                    print('error')
+            rasp = math.sqrt(aleg)
+            return rasp            
 
+        ras = radicalul(a, b)
+        time.sleep(1)
+        for i in range(3):
+            time.sleep(1)
+            print('\r','loading.' + '.' * i, end='')
+            time.sleep(1)
+                        
+        print('answ: ', ras)
+    
+    elif c == 'break':
+        break
 #deciderea daca user doreste sa incepe de la inceput codul
     time.sleep(4.0)
     decision = input('restart?: ')
