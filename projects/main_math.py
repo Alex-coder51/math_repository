@@ -324,7 +324,8 @@ while True:
     elif inpo == 'math':
         os.system('cls')
         time.sleep(2)
-        art = text2art('math operations')
+        art = text2art('math  operations')
+        print(art)
         time.sleep(2)
         os.system('cls')
         from calc import run as run_calc
